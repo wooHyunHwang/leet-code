@@ -47,14 +47,14 @@ class Solution {
         // }
 
         // System.out.println( "아아아앙ㅇ아아아앙ㅇ아아아앙ㅇ아아아앙ㅇ아아아앙ㅇ" );
-        System.out.println( "###################################################################################" );
+        // System.out.println( "###################################################################################" );
         result[0]++;
         // 하위 탐색 건수
         result = findSubChar(0, result, downPath, labelToChar, foundBack);
 
         // 0번 직접
 
-        System.out.println( "###################################################################################" );
+        // System.out.println( "###################################################################################" );
 
         return result;
     }
@@ -66,7 +66,7 @@ class Solution {
         HashSet<Integer> moveAble = downPath.get(i);
 
         if( moveAble == null ) {
-            System.out.println(" ====== 끝자락");
+            // System.out.println(" ====== 끝자락");
             return result;
         }
 
@@ -83,7 +83,7 @@ class Solution {
 
  
 
-            System.out.println("확인 : " + result[move]);
+            // System.out.println("확인 : " + result[move]);
            
             innerFoundBack.forEach((key, value) -> foundBack.merge(key, value, (v1, v2) -> v1 + v2));
         }
