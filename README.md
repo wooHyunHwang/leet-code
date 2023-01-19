@@ -4,4 +4,4 @@
 
 ## Introduction
 
-This is a repository that records the solution that was released.
+This is a repository that records of the solution what I`ve released.
