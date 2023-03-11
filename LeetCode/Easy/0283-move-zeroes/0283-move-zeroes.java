@@ -1,5 +1,5 @@
 class Solution {
-    public void moveZeroes(int[] nums) {
+    public void moveZeroes2(int[] nums) {
         int checkedZero = 0;
         for (int i = 0; i < nums.length; ++i) {
             // System.out.println(i + " / " + checkedZero);
@@ -20,5 +20,23 @@ class Solution {
         for (; checkedZero > 0; --checkedZero) {
             nums[nums.length - checkedZero] = 0;
         }
+    }
+
+    public void moveZeroes(int[] nums) {
+        int fillIdx = 0;
+
+        for (int i = 0; i < nums.length; ++i) {
+            if (nums[i] != 0) {
+                nums = switching(nums, fillIdx, i);
+                fillIdx++;
+            }
+        }
+    }
+
+    int[] switching(int[] nums, int i, int j) {
+        int temp = nums[i];
+        nums[i] = nums[j];
+        nums[j] = temp;
+        return nums;
     }
 }
