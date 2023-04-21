@@ -14,7 +14,7 @@ class Solution {
         if(minus) {
             sb.append("-")
         }
-
+  
         return sb.reverse().toString()
     }
 }
