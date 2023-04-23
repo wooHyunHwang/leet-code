@@ -17,10 +17,8 @@ class Solution {
                     }
                     sum += (num / i);
                 }
-                System.out.println(i + " ===");
             }
         }
-        System.out.println(sum);
 
         return num == sum;
     }
