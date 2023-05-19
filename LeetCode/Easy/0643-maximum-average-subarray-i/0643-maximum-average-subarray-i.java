@@ -1,14 +1,14 @@
 class Solution {
     public double findMaxAverage(int[] nums, int k) {
         int i = 0;
-        double sum = 0;
+        int sum = 0;
 
         // 첫번째 평균값
         for(; i < k; ++i) {
             sum += nums[i];
         }
 
-        double maxSum = sum;
+        int maxSum = sum;
 
         while(i < nums.length) {
 
@@ -19,6 +19,6 @@ class Solution {
             ++i;
         }
 
-        return maxSum / k;
+        return (double)maxSum / k;
     }
 }
