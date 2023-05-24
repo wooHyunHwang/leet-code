@@ -13,7 +13,6 @@ class RecentCounter {
         while(this.counter.getFirst() < t) {
             this.counter.remove();
         }
-
         return this.counter.size();
     }
 }
