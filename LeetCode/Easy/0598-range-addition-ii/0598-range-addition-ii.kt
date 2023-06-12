@@ -10,7 +10,6 @@ class Solution {
             leftMin = Math.min(leftMin, ops[i][0])
             rightMin = Math.min(rightMin, ops[i][1])
         }
-        
         return leftMin * rightMin
     }
 }
