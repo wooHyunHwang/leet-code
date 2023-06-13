@@ -1,5 +1,27 @@
 class Solution {
     public int[] asteroidCollision(int[] asteroids) {
+
+        int lastIdx = -1;
+
+        for(int i = 0; i < asteroids.length; ++i) {
+            boolean processed = false;
+            // 충돌 가능 상태에 대한 처리
+            while(!processed && asteroids[i] < 0 && lastIdx >= 0 && asteroids[lastIdx] > 0) {
+                processed = asteroids[lastIdx] + asteroids[i] >= 0;
+                if(asteroids[lastIdx] + asteroids[i] <= 0) lastIdx--;
+            }
+            // 충돌 후 생존했을 경우 순서를 당겨줌
+            if(!processed) asteroids[++lastIdx] = asteroids[i];
+        }
+
+
+        return Arrays.copyOf(asteroids, lastIdx + 1);
+    }
+
+    /**
+     * LinkedList 를 이용하는 방법
+     */
+    public int[] asteroidCollision2(int[] asteroids) {
         if(asteroids.length == 0) return new int[0];
 
 
