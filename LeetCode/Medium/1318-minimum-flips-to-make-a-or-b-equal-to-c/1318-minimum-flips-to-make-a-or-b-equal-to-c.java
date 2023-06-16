@@ -1,10 +1,6 @@
 class Solution {
     public int minFlips(int a, int b, int c) {
 
-        System.out.println("###########");
-        System.out.println(7 | 7);
-        System.out.println("###########");
-
         char[] aC = Integer.toBinaryString(a).toCharArray();
         char[] bC = Integer.toBinaryString(b).toCharArray();
         char[] cC = Integer.toBinaryString(c).toCharArray();
