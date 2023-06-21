@@ -23,9 +23,7 @@ class Solution {
             two = two.next.next;
         }
 
-        if(two != null) {
-            one.next = one.next.next;
-        }
+        if(two != null) one.next = one.next.next;
         else {
             back.next = one.next;
             one.next = null;
