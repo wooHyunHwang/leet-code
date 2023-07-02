@@ -39,7 +39,6 @@ class Solution {
     private Map<Integer, TreeNode> createCacheByDfs(Map<Integer, TreeNode> parentCache,
                                     TreeNode node, TreeNode p, TreeNode q,
                                     boolean findP, boolean findQ) {
-
         // Break
         if(node == null) return parentCache;
         if(findP && findQ) return parentCache;
