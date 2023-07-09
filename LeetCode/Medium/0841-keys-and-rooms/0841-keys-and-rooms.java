@@ -17,7 +17,6 @@ class Solution {
 
     private void dfs(List<List<Integer>> rooms, boolean[] history, int key) {
         history[key] = true;
-
         for(int i = 0; i < rooms.get(key).size(); ++i) {
             if(!history[rooms.get(key).get(i)]) this.dfs(rooms, history, rooms.get(key).get(i));
         }
