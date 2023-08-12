@@ -16,8 +16,17 @@
 class Solution {
     public int countNodes(TreeNode root) {
 
+        int a = countNodesHelper(root);
+
+        System.gc();
+
+        return a;
+    }
+
+    private int countNodesHelper(TreeNode root) {
+
         if (root == null) return 0;
 
-        return 1 + countNodes(root.left) + countNodes(root.right);
+        return 1 + countNodesHelper(root.left) + countNodesHelper(root.right);
     }
 }
