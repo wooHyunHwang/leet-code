@@ -6,9 +6,11 @@ class Solution {
         m = board.length;
         n = board[0].length;
 
+        char[] wordChar = word.toCharArray();
+
         for (int i = 0; i < board.length; ++i) {
             for (int j = 0; j < board[i].length; ++j) {
-                if (this.dfs(board, word, 0, i, j, new boolean[this.m][this.n])) {
+                if (this.dfs(board, wordChar, 0, i, j)) {
                     return true;
                 }
             }
@@ -16,26 +18,27 @@ class Solution {
         return false;
     }
 
-    private boolean dfs(char[][] board, String word, int wordIdx,
-                        int i, int j, boolean[][] visited
+    private boolean dfs(char[][] board, char[] wordChar, int wordIdx,
+                        int i, int j
     ) {
         // Out of Index
         if (i < 0 || j < 0 || i >= m || j >= n) return false;
-        if (visited[i][j]) return false;
+        if (board[i][j] == '!') return false;
 
-        if (board[i][j] == word.charAt(wordIdx)) {
+        char temp = board[i][j];
+        if (board[i][j] == wordChar[wordIdx]) {
 
-            if (wordIdx == word.length() - 1) return true;
+            if (wordIdx == wordChar.length - 1) return true;
 
-            visited[i][j] = true;
+            board[i][j] = '!';
 
-            if (this.dfs(board, word, wordIdx + 1, i + 1, j, visited)) return true;
-            if (this.dfs(board, word, wordIdx + 1, i, j + 1, visited)) return true;
-            if (this.dfs(board, word, wordIdx + 1, i - 1, j, visited)) return true;
-            if (this.dfs(board, word, wordIdx + 1, i, j - 1, visited)) return true;
+            if (this.dfs(board, wordChar, wordIdx + 1, i + 1, j)) return true;
+            if (this.dfs(board, wordChar, wordIdx + 1, i, j + 1)) return true;
+            if (this.dfs(board, wordChar, wordIdx + 1, i - 1, j)) return true;
+            if (this.dfs(board, wordChar, wordIdx + 1, i, j - 1)) return true;
 
         }
-        visited[i][j] = false;
+        board[i][j] = temp;
         return false;
     }
 }
