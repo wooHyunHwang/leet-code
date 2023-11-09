@@ -3,28 +3,16 @@ class Solution {
     public int coinChange(int[] coins, int amount) {
 
         int[] dp = new int[amount + 1];
-
-        Arrays.fill(dp, Integer.MAX_VALUE);
+        Arrays.fill(dp, amount + 1);
         dp[0] = 0;
 
-
-        for (int i = 1; i <= amount; ++i) {
-            for(int j = 0; j < coins.length; ++j) {
-
-                if (
-                    // 카운트 가능한 코인이고
-                    i - coins[j] >= 0 &&
-                    // 이전에 카운트한 숫자가 초기값이 아니라면
-                    dp[i - coins[j]] != Integer.MAX_VALUE
-                ) {
-                    // 더 작은 숫자로 구성이 가능한경우
-                    dp[i] = Math.min(dp[i], 1 + dp[i - coins[j]]);
-                }
-
+        for(int coin : coins) {
+            for (int i = coin; i <= amount; ++i) {
+                dp[i] = Math.min(dp[i], 1 + dp[i - coin]);
             }
         }
 
-        return dp[amount] != Integer.MAX_VALUE ? dp[amount] : -1;
+        return dp[amount] != amount + 1 ? dp[amount] : -1;
 
     }
 
