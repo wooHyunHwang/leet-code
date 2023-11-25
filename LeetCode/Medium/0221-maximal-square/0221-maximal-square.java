@@ -23,12 +23,8 @@ class Solution {
                 if (matrix[i][j] == '1') {
 
                     // -1 좌표들의 최소값 + 1을 dp[i][j] 에 기록
-                    int next = dp[i-1][j];
-                    next = Math.min(next, dp[i][j-1]);
-                    next = Math.min(next, dp[i-1][j-1]);
-                    max = Math.max(max, ++next);
-
-                    dp[i][j] = next;
+                    dp[i][j] = Math.min(Math.min(dp[i-1][j], dp[i][j-1]), dp[i-1][j-1]) + 1;
+                    if (dp[i][j] > max) max = dp[i][j];
                 }
             }
         }
