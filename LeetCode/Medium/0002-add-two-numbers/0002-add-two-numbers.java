@@ -24,6 +24,7 @@ class Solution {
                     l1.val++;
                     rounding = false;
                 }
+                
                 if (l1.val > 9) {
                     rounding = true;
                     l1.val -= 10;
