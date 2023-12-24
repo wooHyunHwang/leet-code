@@ -1,16 +1,17 @@
 class Solution {
     public int minOperations(String s) {
 
+        char[] c = s.toCharArray();
         int cnt = 0;
         char next = '0';
 
-        for (int i = 0; i < s.length(); ++i) {
+        for (int i = 0; i < c.length; ++i) {
 
-            if (s.charAt(i) != next) cnt++;
+            if (c[i] != next) cnt++;
             next = next == '0' ? '1' : '0';
         }
 
-        return Math.min(cnt, s.length() - cnt);
+        return Math.min(cnt, c.length - cnt);
 
         // char a[]=s.toCharArray();
         // int cnt=0;
