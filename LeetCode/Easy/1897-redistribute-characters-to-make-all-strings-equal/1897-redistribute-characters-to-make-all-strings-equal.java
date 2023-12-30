@@ -12,6 +12,7 @@ class Solution {
         for (int count : his) {
             if (count % words.length != 0) return false;
         }
+        
         return true;
     }
 }
