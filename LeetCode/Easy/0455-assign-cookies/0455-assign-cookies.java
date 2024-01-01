@@ -7,6 +7,7 @@ class Solution {
         int gnt = 0;
         int snt = 0;
 
+        
         for (; gnt < g.length; ++gnt) {
             boolean find = false;
             for (; snt < s.length; ++snt) {
