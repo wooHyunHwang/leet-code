@@ -21,7 +21,7 @@ class Solution {
                 if (nums[j] == plus || nums[j] == minus) ans++;
             }
         }
-
+        
         return ans;
     }
 }
