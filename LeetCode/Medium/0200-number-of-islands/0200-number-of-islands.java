@@ -26,7 +26,6 @@ class Solution {
         if (i < 0 || j < 0 || i >= grid.length || j >= grid[0].length) return;
         if (map[i][j] > 0) return;
         if (grid[i][j] == '1') {
-            // System.out.println(i + " - " + j + " : " + islandNo);
             map[i][j] = islandNo;
 
             this.createIsland(grid, map, islandNo, i-1, j);
