@@ -11,7 +11,7 @@ class Solution {
             if (beforeUpperCase != nextUpperCase) ans++;
             // System.out.println(beforeUpperCase + " + " + nextUpperCase);
             beforeUpperCase = nextUpperCase; 
-        }
+        }  
 
         return ans;
     }
