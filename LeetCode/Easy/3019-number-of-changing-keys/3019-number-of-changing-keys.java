@@ -10,7 +10,7 @@ class Solution {
             int nextUpperCase = cAry[i] >= 'a' ? cAry[i] - div : cAry[i];
             if (beforeUpperCase != nextUpperCase) ans++;
             // System.out.println(beforeUpperCase + " + " + nextUpperCase);
-            beforeUpperCase = nextUpperCase;
+            beforeUpperCase = nextUpperCase; 
         }
 
         return ans;
