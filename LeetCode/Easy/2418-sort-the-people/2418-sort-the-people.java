@@ -1,24 +1,9 @@
 class Solution {
     public String[] sortPeople(String[] names, int[] heights) {
         
-        int n = names.length;
-        Map<Integer, String> mapping = new HashMap<>();
-
-        for (int i = 0; i < n; ++i) {
-            mapping.put(heights[i], names[i]);
-        }
-
-        Arrays.sort(heights);
-        for (int i = 0; i < n / 2; ++i) {
-            int temp = heights[i];
-            heights[i] = heights[n - 1 - i];
-            heights[n - 1 - i] = temp;
-        }
-
-        for (int i = 0; i < n; ++i) {
-            names[i] = mapping.get(heights[i]);
-        }
-
+        this.quickSort(names, heights, 0, heights.length-1);
+        // System.out.println(Arrays.toString(heights));
+        // System.out.println(Arrays.toString(heights));
         return names;
     }
 
@@ -33,16 +18,18 @@ class Solution {
 
     private int partition(String[] names, int[] heights, int left, int right) {
         int low = left;
-        int high = right+1;
+        int high = right;
         int pivot = heights[left];
 
         // 이번 회차 좌,우에서 좁혀지면서 피벗값의 크기를 기준으로 정렬
         do {
 
-            do { low++; }
-            while (low <= right && heights[low] < pivot);
-            do { high--; }
-            while (high >= left && heights[high] > pivot);
+            while (low <= right && heights[low] >= pivot) {
+                low++;
+            }
+            while (high >= left && heights[high] < pivot) {
+                high--;
+            }
 
             if (low < high) swap(names, heights, low, high);
 
