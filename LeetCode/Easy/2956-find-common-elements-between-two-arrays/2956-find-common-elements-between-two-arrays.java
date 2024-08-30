@@ -16,6 +16,9 @@ class Solution {
             }
         }
 
+        num1Count = null;
+        num1Checked = null;
+
         return ans;
     }
 }
