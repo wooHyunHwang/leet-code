@@ -8,8 +8,8 @@ class Solution {
                 count++;
             }
 
-            start /= 2;
-            goal /= 2;
+            start >>= 1;
+            goal >>= 1;
         }
 
         return count;
